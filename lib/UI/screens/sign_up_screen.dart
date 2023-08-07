@@ -14,41 +14,41 @@ class _sign_upState extends State<sign_up> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          color: Colors.pink,
-          child: Column(
-            children: [
-              Image.asset(
-                'lib/image/signup.png',
-                fit: BoxFit.fill,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 18.0),
-                      child: RichText(
-                        text: const TextSpan(
-                            text: 'People who ',
-                            children: <TextSpan>[
-                              TextSpan(
-                                  text: 'love to eat',
-                                  style: TextStyle(color: Colors.orange)),
-                              TextSpan(text: ' are always the'),
-                              TextSpan(text: ' best people',style: TextStyle(color: Colors.orange)),
-                            ],
-
-                            style: TextStyle(fontSize: 25, letterSpacing: .5,)),
-                      ),
-                    ),
-
-                  ],
+        child: SingleChildScrollView(
+          child: Container(
+            color: Colors.pink,
+            child: Column(
+              children: [
+                Image.asset(
+                  'lib/image/signup.png',
+                  fit: BoxFit.fill,
                 ),
-              ),
-              Expanded(
-                child: Container(
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 18.0),
+                        child: RichText(
+                          text: const TextSpan(
+                              text: 'People who ',
+                              children: <TextSpan>[
+                                TextSpan(
+                                    text: 'love to eat',
+                                    style: TextStyle(color: Colors.orange)),
+                                TextSpan(text: ' are always the'),
+                                TextSpan(text: ' best people',style: TextStyle(color: Colors.orange)),
+                              ],
+
+                              style: TextStyle(fontSize: 25, letterSpacing: .5,)),
+                        ),
+                      ),
+
+                    ],
+                  ),
+                ),
+                Container(
 
                   width: double.infinity,
 
@@ -56,7 +56,7 @@ class _sign_upState extends State<sign_up> {
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(40),topRight: Radius.circular(40)),
                     color: Colors.white,
                   ),
-                  height: 500,
+
                   child: Column(
                     children: [
                       const SizedBox(height: 20,),
@@ -99,17 +99,15 @@ class _sign_upState extends State<sign_up> {
                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>OTP()));
                             }, child: const Text('Sign Up')),),
 
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text('Alredy Have an Account?',style: TextStyle(color: Colors.black87),),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Alredy Have an Account?',style: TextStyle(color: Colors.black87),),
 
-                           TextButton(onPressed: (){
-                             Navigator.push(context, MaterialPageRoute(builder: (context)=>loginscreen()));
-                           }, child: Text('Login Here',style: TextStyle(color: Colors.black),))
-                          ],
-                        ),
+                         TextButton(onPressed: (){
+                           Navigator.push(context, MaterialPageRoute(builder: (context)=>loginscreen()));
+                         }, child: Text('Login Here',style: TextStyle(color: Colors.black),))
+                        ],
                       ),
 
 
@@ -119,9 +117,9 @@ class _sign_upState extends State<sign_up> {
 
                     ],
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),

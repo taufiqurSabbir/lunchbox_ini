@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:timer_count_down/timer_count_down.dart';
 
 import 'login_screen.dart';
 
@@ -15,20 +16,20 @@ class _OTPState extends State<OTP> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          color: Colors.pink,
-          child: Column(
-            children: [
-              Container(
-                height: 300,
-                child: Image.asset(
-                  'lib/image/otpicon.png',
-                  width: 180,
-                  height: 180,
+        child: SingleChildScrollView(
+          child: Container(
+            color: Colors.pink,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 300,
+                  child: Image.asset(
+                    'lib/image/otpicon.png',
+                    width: 180,
+                    height: 180,
+                  ),
                 ),
-              ),
-              Expanded(
-                child: Container(
+                Container(
                   width: double.infinity,
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -39,6 +40,7 @@ class _OTPState extends State<OTP> {
                   height: 500,
                   child: Column(
                     children: [
+
                       const SizedBox(
                         height: 20,
                       ),
@@ -52,26 +54,44 @@ class _OTPState extends State<OTP> {
                       const SizedBox(
                         height: 10,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          'You will need to have one password after set up OTP',
-                          style: TextStyle(color: Colors.black54),
-                        ),
+                      // const Padding(
+                      //   padding: EdgeInsets.all(8.0),
+                      //   child: Text(
+                      //     'You will need to have one password after set up OTP',
+                      //     style: TextStyle(color: Colors.black54),
+                      //   ),
+                      // ),
+
+                      RichText(
+                        text: const TextSpan(
+                            text: 'Check your Phone',
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: ' 01792945445',
+                                  style: TextStyle(color: Colors.pink,fontWeight: FontWeight.w600)),
+                            ],
+
+                            style: TextStyle(fontSize: 15, letterSpacing: .5,color: Colors.black,fontWeight: FontWeight.w500)),
                       ),
+                      const SizedBox(height: 10,),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text('Code will be valid for'),
+                          Countdown(seconds: 60, build: (BuildContext context,double time)=>Text(' ${time.toString().substring(0,2)} seconds',style: TextStyle(fontWeight: FontWeight.bold),),
+                            interval: Duration(milliseconds: 1000),
+                          ),
+                        ],
+                      ),
+
+
+
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 22.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                'Phone Number',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w500, fontSize: 15),
-                              ),
-                            ),
                   Padding(
                     padding: const EdgeInsets.all(40.0),
                     child: PinCodeTextField(
@@ -123,9 +143,7 @@ class _OTPState extends State<OTP> {
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
+
                       SizedBox(
                         width: 350,
                         height: 48,
@@ -134,40 +152,38 @@ class _OTPState extends State<OTP> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => OTP()));
+                                      builder: (context) => loginscreen()));
                             },
-                            child: const Text('Sign Up')),
+                            child: const Text('Verify')),
                       ),
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Alredy Have an Account?',
-                              style: TextStyle(color: Colors.black87),
-                            ),
-                            TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => loginscreen()));
-                                },
-                                child: Text(
-                                  'Login Here',
-                                  style: TextStyle(color: Colors.black),
-                                ))
-                          ],
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            'Didn\'t get any code?',
+                            style: TextStyle(color: Colors.black87),
+                          ),
+                          TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => loginscreen()));
+                              },
+                              child: const Text(
+                                'Resend Code',
+                                style: TextStyle(color: Colors.black),
+                              ))
+                        ],
                       ),
                       const SizedBox(
                         height: 15,
                       ),
                     ],
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),
