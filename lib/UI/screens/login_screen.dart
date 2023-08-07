@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'home.dart';
+
 class loginscreen extends StatefulWidget {
   const loginscreen({Key? key}) : super(key: key);
 
@@ -94,8 +96,8 @@ class _loginscreenState extends State<loginscreen> {
                       SizedBox(width: 350,height: 48,
                         child:  ElevatedButton(
                             onPressed: (){
-
-                            }, child: const Text('Sign Up')),),
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+                            }, child: const Text('Login')),),
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
