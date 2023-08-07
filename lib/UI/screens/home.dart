@@ -165,12 +165,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   ],
                 ),
               ),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => breakfast()));
-                  },
-                  child: Text('breakfasr')),
+
               DefaultTabController(
                 length: 4,
                 child: TabBar(
