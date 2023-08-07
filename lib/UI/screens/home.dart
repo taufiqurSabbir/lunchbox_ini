@@ -220,43 +220,289 @@ class breakfast extends StatefulWidget {
 class _breakfastState extends State<breakfast> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: SafeArea(
+    return  SafeArea(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Categories'),
-              Row(
-                children: [
-                  Card(
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text('Categories',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 17),),
+              ),
 
-                    color: Color(0xD5E3E1E1),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Row(
+                  children: [
+                    Card(
 
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(80),
-                    ),
-                    child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10.0, vertical: 2),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.dinner_dining,
-                            color: Colors.pink,
-                          ),
-                          Text('Chicken',),
-                        ],
+                      color: Color(0xD5E3E1E1),
+
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(80),
+                      ),
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 10.0, vertical: 2),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.dinner_dining,
+                              color: Colors.pink,
+                            ),
+                            Text('Chicken',),
+                          ],
+                        ),
                       ),
                     ),
-                  )
-                ],
+                    Card(
+
+                      color: Color(0xD5E3E1E1),
+
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(80),
+                      ),
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 10.0, vertical: 2),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.dinner_dining,
+                              color: Colors.pink,
+                            ),
+                            Text('Chicken',),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Card(
+
+                      color: Color(0xFFE11A70),
+
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(80),
+                      ),
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 10.0, vertical: 2),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.dinner_dining,
+                              color: Colors.white,
+                            ),
+                            Text('Chicken',style: TextStyle(color: Colors.white),),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Popular',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 17),),
+                    SizedBox(height: 5,),
+                    Text('Select Package for order',style: TextStyle(color: Colors.black54),),
+                  ],
+                ),
+              ),
+
+
+              //start of popular item section
+
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 15.0),
+                      child: SizedBox(
+                        height: 250,width: 180,
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)
+                          ),
+                          color: Colors.pink,
+                          child: Column(
+                            children: [
+                              SizedBox(height: 15,),
+                              Image.asset('lib/image/mac.png',width: 170,),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text('Bengali cuisine',style: TextStyle(color: Colors.white,fontSize: 17),),
+                              ),
+                              SizedBox(height: 30,),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text('(150 gm)',style: TextStyle(color: Colors.white70),),
+                                  Text('300 tk',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16),)
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: SizedBox(
+                        height: 250,width: 180,
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)
+                          ),
+                          color: Color(0xFF3425A6),
+                          child: Column(
+                             children: [
+                              SizedBox(height: 15,),
+                              Image.asset('lib/image/ckn.png',width: 120,),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text('Bengali cuisine',style: TextStyle(color: Colors.white,fontSize: 17),),
+                              ),
+                              SizedBox(height: 30,),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text('(150 gm)',style: TextStyle(color: Colors.white70),),
+                                  Text('300 tk',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16),)
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: SizedBox(
+                        height: 250,width: 180,
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)
+                          ),
+                          color: Color(0xFF155264),
+                          child: Column(
+                            children: [
+                              SizedBox(height: 15,),
+                              Image.asset('lib/image/1sts.png',width: 120,),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text('Bengali cuisine',style: TextStyle(color: Colors.white,fontSize: 17),),
+                              ),
+                              SizedBox(height: 30,),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text('(150 gm)',style: TextStyle(color: Colors.white70),),
+                                  Text('300 tk',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16),)
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+
+              //end of popular item section
+
+
+              //start combo pack section
+
+
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Combo Pack',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 17),),
+                    SizedBox(height: 5,),
+                    Text('Select Package for order',style: TextStyle(color: Colors.black54),),
+                  ],
+                ),
+              ),
+
+
+              Card(
+               child: Row(
+                 children: [
+                   SizedBox(
+                     width: 100,
+                     child: Card(
+                       color: Color(0xFFA59ED7),
+                       shape: ContinuousRectangleBorder(
+                         borderRadius: BorderRadius.circular(20)
+                       ),
+                       child: Image.asset('lib/image/1sts.png',),
+                     ),
+                   ),
+                   const Column(
+                     children: [
+                       Text('Wisconsin Cheese Curds'),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         crossAxisAlignment: CrossAxisAlignment.center,
+                         children: [
+                          Row(
+                            children: [
+                              Icon(Icons.fastfood,color: Colors.pink,size: 15,),
+                              SizedBox(width: 5,),
+                              Text('data',style: TextStyle(color: Colors.black54),)
+                            ],
+                          ),
+                          SizedBox(width: 10,),
+                          Row(
+                            children: [
+                              Icon(Icons.fastfood,color: Colors.pink,size: 15,),
+                              SizedBox(width: 5,),
+                              Text('data',style: TextStyle(color: Colors.black54),)
+                            ],
+                          ),
+                           SizedBox(width: 10,),
+                          Row(
+                            children: [
+                              Icon(Icons.fastfood,color: Colors.pink,size: 15,),
+                              SizedBox(width: 5,),
+                              Text('data',style: TextStyle(color: Colors.black54),)
+                            ],
+                          ),
+
+                         ],
+                       ),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                         children: [
+                           Text('(240 gm)'),
+                           Text('TK 500',style: TextStyle(color: Colors.pink),)
+                         ],
+                       )
+                     ],
+                   ),
+                 ],
+               )
               )
+
+
+
+
             ],
           ),
         ),
-      ),
-    );
+      );
+
   }
 }
 
